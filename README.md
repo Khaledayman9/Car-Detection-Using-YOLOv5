@@ -22,6 +22,13 @@ The dataset[^1] consists of images of traffic scenes where each image may contai
   - test/images/: Contains test images.
 - Label Formatting: Convert annotations into YOLO format, which includes converting bounding box coordinates into normalized values relative to image dimensions. Each label file contains one line per object with the format: class_id x_center y_center width height. 
 
+## Model Training
+- YOLO-Based Model: Utilize the YOLO (You Only Look Once) architecture for object detection. The model is trained to specifically identify cars based on the provided dataset. YOLO’s capability to detect multiple objects in a single image makes it suitable for this task.
+- The hyperparameter were:
+  - It was trained for 50 epoch.
+  - Images size was 640x640.
+  - Batch size was 16.
+
 ## YAML File Formation
 - Create a YAML Configuration File: Define paths for training, validation, and testing datasets in a YAML file used by YOLO for training. The YAML file should include:
   - train: Path to the training images directory.
@@ -51,3 +58,25 @@ Run Predictions: Develop a function to run predictions on test images. This func
 
 ## Error Handling
 Manage Image Errors: Include error handling to manage issues such as corrupted or unreadable image files. Ensure the system gracefully skips or handles these problematic images without interrupting the processing of other images.
+
+
+# Results
+- After the training process, the model achieved the following results:
+  - Box Loss: 0.03753
+  - Objectness Loss: 0.01585
+  - Classification Loss: 0.00000
+  - Class: all
+  - Images: 71
+  - Instances: 101
+  - Precision (P): 0.967
+  - Recall (R): 0.950
+  - Mean Average Precision at IoU=0.5 (mAP50): 0.977
+  - Mean Average Precision (mAP): 0.620
+- The GPU Memory Usage was 2.45G.
+
+
+# Acknowledgments
+We would like to acknowledge the YOLOv5[^2] repository for its invaluable contribution to the object detection training process. The YOLOv5 architecture and its associated tools provided the foundation and functionality necessary to develop and train our car detection model efficiently. We appreciate the efforts and open-source contributions of the YOLOv5 team, which have significantly enhanced the performance and capabilities of our project.
+
+[^2]: [Ultralytics YOLOv5](https://github.com/ultralytics/yolov5)
+

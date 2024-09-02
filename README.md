@@ -74,10 +74,49 @@ Manage Image Errors: Include error handling to manage issues such as corrupted o
   - Mean Average Precision at IoU 0.5:0.95 (mAP50-95): 0.658 (65.8%)
 - These statistics suggest that the model is performing very well in terms of precision and recall, with high mAP50, indicating good detection performance for the object class in your test dataset. The mAP50-95 score, which is lower, suggests that there may still be room for improvement in detecting objects across varying IoU thresholds.
 - The GPU Memory Usage was 2.45G.
+- Confidence Threshold: This value sets the minimum confidence level that a detection must have to be considered valid. In this case, only detections with a confidence score of 0.4 or higher will be considered as valid detections. Lower confidence detections will be ignored.
+## Evaluating on Test Set:
+- The model performed good on the test dataset:
+  
+![Predictions](https://github.com/user-attachments/assets/0247c3de-20ae-48bf-9f7f-ad4ba67fa366)
 
+- To showcase this, 15 random samples from the test dataset are plotted, Here are 5 of them:
+  
+![S1](https://github.com/user-attachments/assets/cbf6b350-d15a-44d7-8128-31474e025c47)
+
+![S2](https://github.com/user-attachments/assets/34a6d9ad-a6aa-4699-a7b7-f13f9d75f921)
+
+![S3](https://github.com/user-attachments/assets/b8799ea0-7ab6-4e9d-a178-f81ce91f314f)
+
+![S4](https://github.com/user-attachments/assets/85e8b101-4909-4fe8-a8f7-fea3277bc7fc)
+
+![S5](https://github.com/user-attachments/assets/5becc06c-c6c2-4a64-a43d-aff258af6cd4)
+
+- And finally, 6 images outside the dataset are tested by the model to examine the model's performance:
+
+![SS1](https://github.com/user-attachments/assets/4fae7c04-8d0b-4f52-a9a8-2dc24952e9d6)
+
+![SS2](https://github.com/user-attachments/assets/6b5fcb21-e314-4711-94a8-466f2323dd03)
+
+![SS3](https://github.com/user-attachments/assets/791b33f1-5a58-4fd8-b4ba-118845235ece)
+
+![SS4](https://github.com/user-attachments/assets/5301fc5c-ae09-4888-962a-d6582fcea38c)
+
+![SS5](https://github.com/user-attachments/assets/15604ba2-9d05-4fb5-b108-c45d1dd1439d)
+
+![SS6](https://github.com/user-attachments/assets/bec9a468-ebac-40f1-9e3b-c9d034c019e3)
+
+- You can notice in the image "4.jpg" that an incorrect bounding box was predicted. This indicates that the model could benefit from further improvement.
+
+# Conclusion
+The current YOLO-based car detection model shows promising results with high precision and recall rates. However, as observed in some test images, there are instances of incorrect bounding box predictions, indicating that the model still has room for improvement. Potential enhancements could involve further tuning of hyperparameters, augmenting the dataset with more diverse examples, or exploring more advanced model architectures. Continued development and testing are essential to achieve more accurate and reliable detections, especially in challenging scenarios. The contributions from the YOLOv5 repository have been instrumental in advancing this project, and ongoing refinement will help in creating a more robust solution for car detection tasks.
 
 # Acknowledgments
 We would like to acknowledge the YOLOv5[^2] repository for its invaluable contribution to the object detection training process. The YOLOv5 architecture and its associated tools provided the foundation and functionality necessary to develop and train our car detection model efficiently. We appreciate the efforts and open-source contributions of the YOLOv5 team, which have significantly enhanced the performance and capabilities of our project.
 
 [^2]: [Ultralytics YOLOv5](https://github.com/ultralytics/yolov5)
+
+# Technologies
+- Python
+- Kaggle Notebook
 

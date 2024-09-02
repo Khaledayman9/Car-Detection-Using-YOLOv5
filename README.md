@@ -25,7 +25,7 @@ The dataset[^1] consists of images of traffic scenes where each image may contai
 ## Model Training
 - YOLO-Based Model: Utilize the YOLO (You Only Look Once) architecture for object detection. The model is trained to specifically identify cars based on the provided dataset. YOLO’s capability to detect multiple objects in a single image makes it suitable for this task.
 - The hyperparameter were:
-  - It was trained for 50 epoch.
+  - It was trained for 100 epoch.
   - Images size was 640x640.
   - Batch size was 16.
 
@@ -62,16 +62,17 @@ Manage Image Errors: Include error handling to manage issues such as corrupted o
 
 # Results
 - After the training process, the model achieved the following results:
-  - Box Loss: 0.03753
-  - Objectness Loss: 0.01585
-  - Classification Loss: 0.00000
+  - Box Loss: 0.02876
+  - Objectness Loss: 0.01235
+  - Classification Loss: 0 (indicating no classification error, because only one class is detected)
   - Class: all
   - Images: 71
-  - Instances: 101
-  - Precision (P): 0.967
-  - Recall (R): 0.950
-  - Mean Average Precision at IoU=0.5 (mAP50): 0.977
-  - Mean Average Precision (mAP): 0.620
+  - Instances: 108
+  - Precision (P): 0.989 (98.9%)
+  - Recall (R): 0.963 (96.3%)
+  - Mean Average Precision at IoU 0.5 (mAP50): 0.989 (98.9%)
+  - Mean Average Precision at IoU 0.5:0.95 (mAP50-95): 0.658 (65.8%)
+- These statistics suggest that the model is performing very well in terms of precision and recall, with high mAP50, indicating good detection performance for the object class in your test dataset. The mAP50-95 score, which is lower, suggests that there may still be room for improvement in detecting objects across varying IoU thresholds.
 - The GPU Memory Usage was 2.45G.
 
 

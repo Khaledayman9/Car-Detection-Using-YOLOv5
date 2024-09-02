@@ -76,6 +76,7 @@ Manage Image Errors: Include error handling to manage issues such as corrupted o
 - The GPU Memory Usage was 2.45G.
 - Confidence Threshold: This value sets the minimum confidence level that a detection must have to be considered valid. In this case, only detections with a confidence score of 0.4 or higher will be considered as valid detections. Lower confidence detections will be ignored.
 ## Evaluating on Test Set:
+
 - The model performed good on the test dataset:
   
 ![Predictions](https://github.com/user-attachments/assets/0247c3de-20ae-48bf-9f7f-ad4ba67fa366)
@@ -91,6 +92,9 @@ Manage Image Errors: Include error handling to manage issues such as corrupted o
 ![S4](https://github.com/user-attachments/assets/85e8b101-4909-4fe8-a8f7-fea3277bc7fc)
 
 ![S5](https://github.com/user-attachments/assets/5becc06c-c6c2-4a64-a43d-aff258af6cd4)
+
+
+## Evaluating on Images Outside the Dataset
 
 - And finally, 6 images outside the dataset are tested by the model to examine the model's performance:
 
